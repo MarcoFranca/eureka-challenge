@@ -6,6 +6,7 @@
 -[x] __criar o router dentro de assets__
   -[x] _criar a pagina de erro 404_
   -[x] _criar a pagina index_
+  -[x] _colocar o router no App_
     - [x] criar o componente da header
     - [ ] criar a main
 -[ ] __Fazer o primeiro card__
