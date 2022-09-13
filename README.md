@@ -6,7 +6,7 @@
 -[x] __criar o router dentro de assets__
   -[x] _criar a pagina de erro 404_
   -[x] _criar a pagina index_
-    - [ ] criar o componente da header
+    - [x] criar o componente da header
     - [ ] criar a main
 -[ ] __Fazer o primeiro card__
   - [ ] _Fazer componente de membros
