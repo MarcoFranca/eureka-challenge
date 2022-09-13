@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+## To do
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-[x] __instalar npx-react-app__
+-[x] __instalar o react-router__
+  -[] _criar a pagina de erro_
+  -[] _criar a index_
+    - [ ] criar o componente da header
+    - [ ] criar a main
+-[ ] __Fazer o primeiro card__
+  - [ ] _Fazer componente de membros
+- [ ] __criar o segundo card__
+- [ ] __criar o terceiro card__
+  
 
-## Available Scripts
 
-In the project directory, you can run:
+## Requisitos
 
-### `npm start`
+- Preferencialmente faça em React, mas você pode usar outras bibliotecas ou frameworks (Angular, Vue.js, etc) ou JavaScript puro, fique a vontade.
+- Para a folha de estilo, pode usar o que preferir (CSS, SASS, LESS, CSS Modules, CSS-in-JS, etc).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## O que iremos avaliar
+- O projeto funciona como esperado: O passo-a-passo pedido para rodar a aplicação funciona?
+- Organização do código: separação de módulos e organização do projeto (back-end e front-end).
+- Clareza: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
+- Assertividade: A aplicação faz o que é esperado? Se tem algo faltando, o README explica o porquê?
+- Legibilidade do código: É fácil ler e entender o código? Existem muitas variáveis/funções com nome enigmático? Comentários no código ajudam a explicar o fluxo?
+- Segurança: Existe alguma vulnerabilidade clara?
+- Cobertura de testes Qualidade e cobertura dos testes (não esperamos cobertura completa).
+- Histórico de commits Qualidade e estrutura dos commits.
+- UX: A "interface" é de fácil uso e autoexplicativa? As rotas/métodos da API são intuitivos?
+- Escolhas técnicas: A escolha das bibliotecas, arquitetura etc... É a melhor escolha para a aplicação?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API
 
-### `npm test`
+```java
+  [URL]: https://challenge-fielo.herokuapp.com
+  [APP_ID]: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCh7uxHjWd1CyRgPD4XHcIPKiDb
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **/auth** [POST] - Endpoint responsável pela autorização da aplicação, é necessário adicionar a chave `x-app-id` com  `[APP_ID]`
+- **/users** [GET] - Endpoint responsável por retornar todos os users.
+- **/users/id** [GET] - Endpoint responsável por retornar o perfil do user.
+- **/users/id/activities** [GET] - Endpoint responsável por retornar as atividades do usuário.
+- **/programs/id** [GET]- Endpoint responsável por retornar todos os programs.
+- **/programs/id/levels** [GET]- Endpoint responsável por retornar todos os programs.
+- **/levels/id** [GET]- Endpoint responsável por retornar todos os programs.
 
-### `npm run build`
+## Exemplo da autorização
+```java
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://challenge-fielo.herokuapp.com/auth',
+  'headers': {
+    'x-app-id': 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCh7uxHjWd1CyRgPD4XHcIPKiDb'
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+ ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Resultado da autorização
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```java
+{
+    "auth": true,
+    "token": "TOKEN_JWT"
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Exemplo do consumo dos dados
+```java
+var request = require('request');
+var options = {
+  'method': 'GET',
+  'url': 'https://challenge-fielo.herokuapp.com/users',
+  'headers': {
+    'x-access-token': 'TOKEN_JWT'
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
+ ```
