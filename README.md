@@ -4,8 +4,8 @@
 -[x] __instalar o react-router__
 -[x] __criar pastas pages, assets e components__
 -[x] __criar o router dentro de assets__
-  -[ ] _criar a pagina de erro 404_
-  -[ ] _criar a pagina index_
+  -[x] _criar a pagina de erro 404_
+  -[x] _criar a pagina index_
     - [ ] criar o componente da header
     - [ ] criar a main
 -[ ] __Fazer o primeiro card__
