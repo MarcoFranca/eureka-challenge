@@ -2,8 +2,10 @@
 
 -[x] __instalar npx-react-app__
 -[x] __instalar o react-router__
-  -[] _criar a pagina de erro_
-  -[] _criar a index_
+-[x] __criar pastas pages, assets e components__
+-[x] __criar o router dentro de assets__
+  -[ ] _criar a pagina de erro 404_
+  -[ ] _criar a pagina index_
     - [ ] criar o componente da header
     - [ ] criar a main
 -[ ] __Fazer o primeiro card__
