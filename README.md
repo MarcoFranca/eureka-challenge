@@ -1,15 +1,15 @@
 ## To do
 
--[x] __instalar npx-react-app__
--[x] __instalar o react-router__
--[x] __criar pastas pages, assets e components__
--[x] __criar o router dentro de assets__
-  -[x] _criar a pagina de erro 404_
-  -[x] _criar a pagina index_
-  -[x] _colocar o router no App_
+- [x] __instalar npx-react-app__
+- [x] __instalar o react-router__
+- [x] __criar pastas pages, assets e components__
+- [x] __criar o router dentro de assets__
+  - [x] _criar a pagina de erro 404_
+  - [x] _criar a pagina index_
+  - [x] _colocar o router no App_
     - [x] criar o componente da header
     - [ ] criar a main
--[ ] __Fazer o primeiro card__
+- [ ] __Fazer o primeiro card__
   - [ ] _Fazer componente de membros
 - [ ] __criar o segundo card__
 - [ ] __criar o terceiro card__
