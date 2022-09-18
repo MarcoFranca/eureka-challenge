@@ -24,9 +24,3 @@ export const  getUsers = async () => {
         })
         .catch(error => console.log(error))
 }
-
-
-
-
-
-
