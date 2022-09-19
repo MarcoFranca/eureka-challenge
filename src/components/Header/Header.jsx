@@ -1,5 +1,5 @@
 // import './Header.js'
-import Logo from '../../assets/images/NewRoots Logo.svg'
+import Logo from '../../assets/images/NewRootsLogo.svg'
 
 export default function Header() {
     return (
