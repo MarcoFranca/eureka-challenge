@@ -1,6 +1,9 @@
 import axios from "axios";
-import {fieloUrl, fieloKey } from "./apiKey";
+import {fieloUrl, fieloKey } from "./apiConfig";
 
+
+//**** api connection authorization function ****
+//**** and token capture for access          ****
 export const authUseur = () => {
     axios.post(`${fieloUrl}/auth`,{
         headers: {
@@ -12,6 +15,8 @@ export const authUseur = () => {
         })
         .catch(error => console.log(error))
 }
+
+//**** API user capture function ****
 
 export const  getUsers = async () => {
     await axios.get(`${fieloUrl}/users`, {
