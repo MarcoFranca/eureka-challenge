@@ -2,13 +2,19 @@
 
 - [x] __instalar npx-react-app__
 - [x] __instalar o react-router__
+- [x] __instalar o styled-components__
 - [x] __criar pastas pages, assets e components__
 - [x] __criar o router dentro de assets__
   - [x] _criar a pagina de erro 404_
-  - [x] _criar a pagina index_
+    - [x] criar pagina de estilo e estilizar
+  - [x] _criar a pagina home_
+    - [x] criar pagina de estilo e estilizar
   - [x] _colocar o router no App_
     - [x] criar o componente da header
+      - [x] criar pagina de estilo e estilizar 
     - [ ] criar a main
+- [x] __conectar com APIs__
+  - [x] _fazer pagina de config da API_
 - [ ] __Fazer o primeiro card__
   - [ ] _Fazer componente de membros
 - [ ] __criar o segundo card__
