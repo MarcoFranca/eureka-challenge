@@ -1,10 +1,11 @@
-// import './Header.js'
+
 import Logo from '../../assets/images/NewRootsLogo.svg'
+import {HeaderStyled} from "./HeaderStyled";
 
 export default function Header() {
     return (
-        <header>
+        <HeaderStyled>
             <img src={Logo} alt="logo"/>
-        </header>
+        </HeaderStyled>
     )
 }
