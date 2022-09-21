@@ -1,31 +1,37 @@
 import axios from "axios";
-import {fieloUrl, fieloKey } from "./apiConfig";
-
+import {fieloUrl, fieloKey, apiUsers} from "./apiConfig";
 
 //**** api connection authorization function ****
 //**** and token capture for access          ****
-export const authUseur = () => {
+
+const tokenGenerator = (route, setState) => {
     axios.post(`${fieloUrl}/auth`,{
         headers: {
             'x-app-id': {fieloKey}
         }})
         .then(response => {
-            localStorage.setItem('fieloToken',response.data.token)
             console.log(response.data.token)
+            validateToken(response.data.token, apiUsers, setState)
         })
         .catch(error => console.log(error))
 }
 
-//**** API user capture function ****
+//**** API token validate function ****
 
-export const  getUsers = async () => {
-    await axios.get(`${fieloUrl}/users`, {
+const  validateToken = (token, route, setState) => {
+    axios.get(`${fieloUrl}${route}`, {
         headers: {
-            'x-access-token': localStorage.getItem('fieloToken')
-        }
-    })
+            'x-access-token': token
+        }})
         .then(response => {
-            console.log(response.data)
-        })
+            setState(response.data)
+            console.log(response.data)})
         .catch(error => console.log(error))
 }
+
+//**** API get method function ****
+
+export const getApi  = (route, setState) =>{
+    tokenGenerator(route, setState,)
+    }
+
