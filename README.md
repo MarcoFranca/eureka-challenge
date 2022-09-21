@@ -12,11 +12,13 @@
   - [x] _colocar o router no App_
     - [x] criar o componente da header
       - [x] criar pagina de estilo e estilizar 
-    - [ ] criar a main
+    - [X] criar a main
+      - [x] criar pagina de estilização da main
 - [x] __conectar com APIs__
   - [x] _fazer pagina de config da API_
-- [ ] __Fazer o primeiro card__
-  - [ ] _Fazer componente de membros
+- [x] __Fazer o primeiro card__
+  - [x] _Fazer componente de membros
+  - [x] _estilizar o primeiro card_
 - [ ] __criar o segundo card__
 - [ ] __criar o terceiro card__
   
