@@ -10,7 +10,6 @@ export const tokenGenerator = (setToken) => {
             'x-app-id': {fieloKey}
         }})
         .then(response => {
-            console.log(response.data.token)
             setToken(response.data.token)
         })
         .catch(error => console.log(error))
@@ -18,7 +17,7 @@ export const tokenGenerator = (setToken) => {
 
 //**** API token validate function ****
 
-export const  validateToken = (token, route, setState) => {
+export const  getFielo = (token, route, setState) => {
     axios.get(`${fieloUrl}${route}`, {
         headers: {
             'x-access-token': token
@@ -28,9 +27,7 @@ export const  validateToken = (token, route, setState) => {
             console.log(`${fieloUrl}${route}`)
             console.log(response.data)})
         .catch(error => console.log(error))
-    }
-
-//**** API get method function ****
+}
 
 
 
