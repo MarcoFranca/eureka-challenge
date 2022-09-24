@@ -7,8 +7,10 @@ export const HeaderStyled = styled.header`
   padding: 1.5rem 1.5rem;
   box-shadow: 0 2px 3px ${colors.colorGray};
   position: relative;
+  z-index: 10;
   
   @media screen and (min-width: 768px){
     padding: 1.5rem 4.5rem;
+   
   }
 `

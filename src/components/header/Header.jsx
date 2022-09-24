@@ -1,4 +1,3 @@
-
 import Logo from '../../assets/images/NewRootsLogo.svg'
 import {HeaderStyled} from "./HeaderStyled";
 
