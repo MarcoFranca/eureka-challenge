@@ -14,7 +14,7 @@ export const colors = {
 
     leaderboardHooverColor: 'rgba(240,248,252,1)',
     leaderboardTitleColor: 'rgba(138,148,166,1)',
-    leaderboardFontColor: 'rgba(22, 50, 92, 1)'
+    leaderboardNameColor: 'rgba(22, 50, 92, 1)'
 
 }
 
