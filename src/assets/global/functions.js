@@ -10,7 +10,7 @@ export const imgNull = (user) => user === null ? Avatar : user
 
 // **** function to select and open user overview ***
 
-export function openOverview(id , selector, setUserSelect) {
+export function openOverview(id , selector, setUserId) {
     const tag = document.querySelector(`#${selector}`)
     const leaderCell = document.getElementsByClassName("leaderContainer")
     tag.style.display !== "flex" && (tag.style.display = 'flex')
@@ -18,10 +18,9 @@ export function openOverview(id , selector, setUserSelect) {
     for (const divKey in leaderCell) {
         if (leaderCell[divKey].id === id) {
             leaderCell[divKey].classList.add("marked")
-            setUserSelect(leaderCell[divKey].id)
+            setUserId(leaderCell[divKey].id)
         }else if (divKey !== 'length'){
             leaderCell[divKey].className="leaderContainer"
         }
     }
 }
-
