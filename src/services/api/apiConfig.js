@@ -1,26 +1,27 @@
 // *************  API keys and URLs    ***************
 
-//Fielo access API
-export const fieloUrl = 'https://challenge-fielo.herokuapp.com'
+export const fielo = {
 
-export const fieloKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCh7uxHjWd1CyRgPD4XHcIPKiDb"
+//*************  Fielo access API  *************
 
-//Fielo methods
+    url: "https://challenge-fielo.herokuapp.com",
+    Key: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCh7uxHjWd1CyRgPD4XHcIPKiDb",
 
-//**Endpoint responsible for returning all users.**
-export const apiUsers = "/users"
-//**Endpoint responsible for returning the user profile.**
-export const apiId = "/users/id"
-//**Endpoint responsible for returning user activities.**
-export const apiActivities = "/users/id/activities"
+//*************  Fielo methods  *************
 
-
-//**Endpoint responsible for returning all programs.**
-export const apiProgramsId = "/programs/id"
-//**Endpoint responsible for returning all programs.**
-export const apiProgramsLevels = "/programs/id/levels"
-//**Endpoint responsible for returning all programs.**
-export const apiLevels = "/levels/id"
+//******* Endpoint responsible for returning all users.  *************
+    urlUsers: "/users",
+//******* Endpoint responsible for returning the user profile. ********
+    urlUser: (userId)=> `/users/${userId}`,
+//******* Endpoint responsible for returning user activities.  ********
+    urlUserActivities: (userId)=> `/users/${userId}/activities`,
+//******* Endpoint responsible for returning all programs. *********
+    urlProgramsId : (programsId)=> `/programs/${programsId}`,
+//******* Endpoint responsible for returning all programs. *********
+    urlProgramsLevels : (levelsId)=> `/programs/${levelsId}/levels`,
+//******* Endpoint responsible for returning all programs. *********
+    urlLevels : (userId)=> `/levels/${userId}`
+}
 
 //Bing API
 export const bingUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=pt-BR'
