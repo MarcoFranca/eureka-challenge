@@ -5,12 +5,7 @@ import {fontFamily} from "../../assets/global/fontsStyle";
 //style of user cells in leaderboard
 
 export const ButtonLeaderboard = styled.button`
-  display: grid;
-  width: calc(100% - 8px);
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: 32px;
-  align-self: center;
-  border-radius: 8px;
+  width: 100%;
   border: none;
   background-color: ${colors.colorWhite};
   font-family: ${fontFamily.segoeFont};
@@ -18,9 +13,24 @@ export const ButtonLeaderboard = styled.button`
   font-weight: 600;
   font-size: 13px;
   line-height: 17px;
-  color: ${colors.leaderboardFontColor};
+  color: ${colors.leaderboardNameColor};
 
-  :hover {
+  .leaderContainer{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 32px;
+    align-self: center;
+    border-radius: 8px;
+    width: 100%;
+    background-color: ${colors.colorWhite};
+
+    :hover {
+      background-color: ${colors.leaderboardHooverColor};
+      cursor: pointer;
+    }
+  }
+  
+  .marked{
     background-color: ${colors.leaderboardHooverColor};
   }
 
