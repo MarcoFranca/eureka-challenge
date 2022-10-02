@@ -2,12 +2,17 @@ import styled from "styled-components";
 import {colors} from "../../assets/global/colorsStyle";
 
 export const MainStyle = styled.main`
-  height: 100vh;
+  height: calc(100vh - 5.25rem);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: ${colors.scrollbarColor};
+  
+  h1{
+    color: red;
+    z-index: 10;
+  }
 
   .background{
     position: absolute;
