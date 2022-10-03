@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {ButtonLeaderboard} from "./LeaderboardCellStyle";
-import {openOverview} from "../../assets/global/functions";
+import {openUserProfile} from "../../assets/global/functions";
 import {UsersContext} from "../../context/UsersContext";
 
 //user cell to be created inside the leaderboard card
@@ -10,10 +10,11 @@ export default function LeaderboardCell(props) {
 
     return (
         <ButtonLeaderboard onClick={()=> {
-            openOverview(
-                props.id,
-                "overviewCard",
-                setUserId)}}
+
+//*********  function responsible for storing the selected id and opening the User profile and feed cards  ******************
+
+            openUserProfile(
+                props.id, setUserId)}}
         >
             <div id={props.id} className="leaderContainer">
                 <p>{props.position}</p>
