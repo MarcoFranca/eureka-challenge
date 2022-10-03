@@ -18,9 +18,9 @@ export const fielo = {
 //******* Endpoint responsible for returning all programs. *********
     urlProgramsId : (programsId)=> `/programs/${programsId}`,
 //******* Endpoint responsible for returning all programs. *********
-    urlProgramsLevels : (levelsId)=> `/programs/${levelsId}/levels`,
+    urlProgramsLevels : (programsId)=> `/programs/${programsId}/levels`,
 //******* Endpoint responsible for returning all programs. *********
-    urlLevels : (userId)=> `/levels/${userId}`
+    urlLevels : (levelsId)=> `/levels/${levelsId}`
 }
 
 //Bing API
