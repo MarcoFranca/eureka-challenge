@@ -30,6 +30,8 @@ export const ButtonLeaderboard = styled.button`
     }
   }
   
+  //**********  class to mark the selected cell ****************
+  
   .marked{
     background-color: ${colors.leaderboardHooverColor};
   }

@@ -6,6 +6,8 @@ import {fontFamily} from "../../assets/global/fontsStyle";
 
 export const DivCard = styled.div`
   display: flex;
+  position: relative;
+  margin-top: 2rem;
   flex-direction: column;
   box-sizing: border-box;
   background-color: ${colors.colorWhite};
@@ -15,6 +17,15 @@ export const DivCard = styled.div`
   padding: 0.5rem;
   box-shadow: 0 2px 3px ${colors.colorGray};
   z-index: 10;
+
+  @media screen and (min-width: 1024px){
+    margin-top: 0;
+    margin-left: 5%;
+  }
+  
+  @media screen and (min-width: 1200px){
+    margin-left: 15%;
+  }
 `
 
 // styling of leaderbord titles
