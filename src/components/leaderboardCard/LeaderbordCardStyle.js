@@ -9,15 +9,12 @@ export const DivCard = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   background-color: ${colors.colorWhite};
-  width: 300px;
-  height: 386px;
-  border-radius: 8px;
-  padding: 8px;
-
-  @media screen and (min-width: 1024px){
-    position: relative;
-    left: 242px;
-  }
+  width: 18.75rem;
+  height: 24.125rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 2px 3px ${colors.colorGray};
+  z-index: 10;
 `
 
 // styling of leaderbord titles
@@ -31,11 +28,11 @@ export const DivCardTitle = styled.div`
     font-family: ${fontFamily.segoeFont};
     font-style: normal;
     font-weight: 600;
-    font-size: 13px;
-    line-height: 17px;
+    font-size: 0.8125rem;
+    line-height: 1.0625rem;
     display: flex;
     align-items: center;
-    padding: 4px 8px;
+    padding: 0.25rem 0.5rem;
     color: ${colors.leaderboardTitleColor};
   }
 `
@@ -46,18 +43,18 @@ export const DivCardLeaderbords = styled.div`
   overflow-y: scroll;
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 0.5rem;
     background-color: ${colors.scrollbarColor};
-    border-radius: 4px;
+    border-radius: 0.25rem;
 
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: ${colors.scrollBackgorundColor};
-    border-radius: 4px;
-    border: solid 2px ${colors.scrollBorderColor};
-    width: 24px;
-    height: 40px;
+    border-radius: 0.25rem;
+    border: solid 0.125rem ${colors.scrollBorderColor};
+    width: 1.5rem;
+    height: 2.5rem;
   }
 `
 
