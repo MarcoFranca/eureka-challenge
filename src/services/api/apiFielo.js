@@ -27,8 +27,7 @@ export const  getFielo = (token, route, setState) => {
         }})
         .then(response => {
             setState(response.data)
-            console.log(fielo.url + route)
-            console.log(response.data)})
+        })
         .catch(error => console.log(error))
 }
 export const  getUserProfile = (token, route, setState, setProgId, setLevelId) => {
@@ -40,10 +39,6 @@ export const  getUserProfile = (token, route, setState, setProgId, setLevelId) =
             setState(response.data)
             setProgId(response.data.programId)
             setLevelId(response.data.levelId)
-            console.log(fielo.url + route)
-            console.log("programid =>" + response.data.programId)
-            console.log("proglevelId =>" + response.data.levelId)
-            console.log(response.data)
         })
         .catch(error => console.log(error))
 }
