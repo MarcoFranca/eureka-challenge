@@ -9,7 +9,7 @@ import React from "react";
 // ****  function to sort users by the amount of points  *****
 
 export const sort = (a, b) => a.balance.points < b.balance.points ? (1) : -1
-export const sortFeed = (a, b) => a.date > b.date ? (1) : -1
+export const sortFeed = (a, b) => a.date < b.date ? (1) : -1
 
 // ****  function to put default Avatar image on users without avatar *****
 
@@ -53,7 +53,6 @@ export function activityFeedRender(feed) {
                     <img src={YellowBag} alt='icon'/>
                     <div className="feedContent">
                         <h3>{dateP(feed.date)}</h3>
-                        <h3>{feed.date}</h3>
                         <p>Redeemed <span>New Roots Backpack</span> for <span>80 points.</span></p>
                     </div>
                 </>
@@ -65,7 +64,6 @@ export function activityFeedRender(feed) {
                     <img src={Mark} alt='icon'/>
                     <div className="feedContent">
                         <h3>{dateP(feed.date)}</h3>
-                        <h3>{feed.date}</h3>
                         <p>Completed the module <span>Nibh quis massa.</span></p>
                     </div>
                 </>
@@ -77,7 +75,6 @@ export function activityFeedRender(feed) {
                 <img src={Marked} alt='icon'/>
                 <div className="feedContent">
                     <h3>{dateP(feed.date)}</h3>
-                    <h3>{feed.date}</h3>
                     <p>Received <span>100 points</span> for completing the Incentive <span>Imperdiet senecctus sit.</span></p>
                 </div>
             </>
@@ -89,7 +86,6 @@ export function activityFeedRender(feed) {
                     <img src={YellowBag} alt='icon'/>
                     <div className="feedContent">
                         <h3>{dateP(feed.date)}</h3>
-                        <h3>{feed.date}</h3>
                         <p>Completed the Incetive <span>Imperdiet senectus sit.</span></p>
                     </div>
                 </>
@@ -101,7 +97,6 @@ export function activityFeedRender(feed) {
                     <img src={Flag} alt='icon'/>
                     <div className="feedContent">
                         <h3>{dateP(feed.date)}</h3>
-                        <h3>{feed.date}</h3>
                         <p>Completed the Incetive <span>Imperdiet senectus sit.</span></p>
                     </div>
                 </>
@@ -113,21 +108,20 @@ export function activityFeedRender(feed) {
                     <img src={YellowBag} alt='icon'/>
                     <div className="feedContent">
                         <h3>{dateP(feed.date)}</h3>
-                        <h3>{feed.date}</h3>
                         <p>Redeemed <span>New Roots Backpack</span> for <span>600 points.</span></p>
                     </div>
                 </>
             )
 
         default:
-
+            console.error("the feed action description was not registered, or an error occurred")
     }
 
 }
 
 // function to select the benchmark and write the next level
 
-export function nextTier(tier) {
+export function nextTier(tier, setLevelMark) {
 
     switch (tier.name) {
 
@@ -137,7 +131,7 @@ export function nextTier(tier) {
             if (tierSelected !== null){
                 tierSelected.classList.add("tierMarked")
             }
-            return "Platinium"
+            return setLevelMark("Platinium")
 
 
         case "Silver":
@@ -146,7 +140,7 @@ export function nextTier(tier) {
             if (tierSelected2 !== null){
                 tierSelected2.classList.add("tierMarked")
             }
-            return "Gold"
+            return setLevelMark("Gold")
 
 
         case "Bronze":
@@ -155,7 +149,10 @@ export function nextTier(tier) {
             if (tierSelected3 !== null){
                 tierSelected3.classList.add("tierMarked")
             }
-            return "Silver"
+            return setLevelMark("Silver")
+
+        default:
+            return console.error('error' + tier.name)
     }
 }
 
