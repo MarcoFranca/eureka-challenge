@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import {UsersContext} from "../../context/UsersContext";
 import {activityFeedRender, sortFeed} from "../../assets/global/functions";
-import Loading from "../../assets/images/Spinner-1.2s-231px.svg";
 
 export default function ActivityFeed() {
     const {userFeed} = useContext(UsersContext)
@@ -14,9 +13,7 @@ export default function ActivityFeed() {
 
  {/**********  function to build the activities on the card  ************/}
 
-                {userFeed.length === 0 ? (<span>
-                        <img src={Loading} alt="loading" style={{width:"50px"}}/>
-                        </span>):
+                {userFeed.length === 0 ? (""):
 
  // function to format the date of the api that changed the format on 10/02/2022
  //                 and put in ascending order by the dates
