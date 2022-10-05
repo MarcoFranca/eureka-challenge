@@ -13,7 +13,6 @@ import {imgNull, nextTier} from "../../assets/global/functions";
 import Arrow from "../../assets/images/arrow.svg";
 import Infinite from "../../assets/images/infinite.svg";
 import Iimg from "../../assets/images/pngwing.com.png";
-import Loading from "../../assets/images/Spinner-1.2s-231px.svg";
 
 export default function UserProfile() {
 
@@ -23,29 +22,32 @@ export default function UserProfile() {
         token, userId, userProfile,
         setUserProfile, userPrograms,
         setUserPrograms, userLevel, setUserLevel,progId,
-        setProgId, levelId,setLevelId
+        setProgId, levelId,setLevelId,levelMark, setLevelMark
     } = useContext(UsersContext)
 
 //**********  functions to capture user profile, programs and user level  **************
 
     useEffect(()=>{
         userId.length > 0 && getUserProfile(token,fielo.urlUser(userId),setUserProfile, setProgId, setLevelId)
-    },[userId])
+    },[userId, token, setUserProfile, setProgId, setLevelId])
 
     useEffect(()=>{
         progId.length > 0 && getFielo(token,fielo.urlProgramsId(progId),setUserPrograms)
-    },[progId])
+    },[progId, token, setUserPrograms])
 
     useEffect(()=>{
         levelId.length > 0 && getFielo(token,fielo.urlLevels(levelId),setUserLevel)
-    },[levelId])
+    },[levelId, token, setUserLevel])
+
+    useEffect(()=>{
+        levelId.length > 0 && nextTier(userLevel, setLevelMark)
+    },[userLevel, setLevelMark])
+
 
 
     return (
         userLevel.length === 0  ?
-            <span style={{display:"flex"}}>
-                        <img src={Loading} alt="loading" style={{width:"50px"}}/>
-                        </span> :
+            "" :
             <CardContainer id={"overviewCard"}>
 
 {/*************************** first division *****************************/}
@@ -87,9 +89,8 @@ export default function UserProfile() {
                     <div className="tierContent">
                         <h3>{userLevel.name}</h3>
                         <div className="nextTier">
-                            <p><span>Next tier</span>
-                                {nextTier(userLevel)}</p>
-                            <img src={Iimg} alt=""/>
+                            <p><span>Next tier</span>{levelMark}</p>
+                            <img src={Iimg} alt="i"/>
                         </div>
                     </div>
 
