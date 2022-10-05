@@ -14,6 +14,7 @@ export const UsersContextProvider = ({children})=>{
     const [userProfile, setUserProfile] = useState([])
     const [userPrograms, setUserPrograms] = useState([])
     const [userLevel, setUserLevel] = useState([])
+    const [levelMark, setLevelMark] = useState([])
     const [userFeed, setUserFeed] = useState([])
 
 
@@ -30,6 +31,7 @@ export const UsersContextProvider = ({children})=>{
                 progId,setProgId,
                 levelId,setLevelId,
                 userFeed, setUserFeed,
+                levelMark, setLevelMark
                 }}
         >
             {children}
