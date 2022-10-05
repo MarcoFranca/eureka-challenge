@@ -19,7 +19,11 @@ export default function ActivityFeed() {
  //                 and put in ascending order by the dates
 
                     (userFeed.map((feed) =>{
-                             feed.date = feed.date.replace("--", "-" )
+                             feed.date = feed.date.replace("--", "-" ).split("-")
+                        if (feed.date[2] === "0"){
+                            feed.date[2] = "1"
+                        }
+                        feed.date = feed.date.join("-")
                         return feed
                 })).sort(sortFeed).map((feed)=>(
                     <div key={feed.id} className='feedCountainer'>
