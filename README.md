@@ -1,98 +1,97 @@
-## To do
+# Welcome! 👋
 
-- [x] __instalar npx-react-app__
-- [x] __instalar o react-router__
-- [x] __instalar o styled-components__
-- [x] __criar pastas pages, assets e components__
-- [x] __criar o router dentro de assets__
-  - [x] _criar a pagina de erro 404_
-    - [x] criar pagina de estilo e estilizar
-  - [x] _criar a pagina home_
-    - [x] criar pagina de estilo e estilizar
-  - [x] _colocar o router no App_
-    - [x] criar o componente da header
-      - [x] criar pagina de estilo e estilizar 
-    - [X] criar a main
-      - [x] criar pagina de estilização da main
-- [x] __conectar com APIs__
-  - [x] _fazer pagina de config da API_
-- [x] __Fazer o primeiro card__
-  - [x] _Fazer componente de membros
-  - [x] _estilizar o primeiro card_
-- [ ] __criar o segundo card__
-- [ ] __criar o terceiro card__
-  
+This is a solution to the challenge [Fielo](https://github.com/MarcoFranca/eureka-challenge).
 
+A responsive design of a leder board with details of the user and their activities.
 
-## Requisitos
+---
 
-- Preferencialmente faça em React, mas você pode usar outras bibliotecas ou frameworks (Angular, Vue.js, etc) ou JavaScript puro, fique a vontade.
-- Para a folha de estilo, pode usar o que preferir (CSS, SASS, LESS, CSS Modules, CSS-in-JS, etc).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [How it works](#how-it-works)
+- [Author](#author)
 
-## O que iremos avaliar
-- O projeto funciona como esperado: O passo-a-passo pedido para rodar a aplicação funciona?
-- Organização do código: separação de módulos e organização do projeto (back-end e front-end).
-- Clareza: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
-- Assertividade: A aplicação faz o que é esperado? Se tem algo faltando, o README explica o porquê?
-- Legibilidade do código: É fácil ler e entender o código? Existem muitas variáveis/funções com nome enigmático? Comentários no código ajudam a explicar o fluxo?
-- Segurança: Existe alguma vulnerabilidade clara?
-- Cobertura de testes Qualidade e cobertura dos testes (não esperamos cobertura completa).
-- Histórico de commits Qualidade e estrutura dos commits.
-- UX: A "interface" é de fácil uso e autoexplicativa? As rotas/métodos da API são intuitivos?
-- Escolhas técnicas: A escolha das bibliotecas, arquitetura etc... É a melhor escolha para a aplicação?
+# Overview
+## The challenge
 
-## API
+- the design should be as close as possible to the prototype
+  **- [Link](https://www.figma.com/proto/23JH8HYpZv232BDAB3UC57/Test?node-id=14%3A4878&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=14%3A4707)**
+- The URL of the background image must be extracted from the [API do Bing](https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=pt-BR).
+  - __** IMPORTANT The Bing API has Cors Blocking, to be able to use the background images it will be necessary to install a Cors Unblocking Extension, since I don't have access to the API header__
+    [Link da extenção](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=pt)
+- Users and their information must be taken from the Fielo API
 
-```java
-  [URL]: https://challenge-fielo.herokuapp.com
-  [APP_ID]: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCh7uxHjWd1CyRgPD4XHcIPKiDb
+![image](./public/image/localhost_3000.png)
+
+## links
+
+- [live site URL](https://eureka-challenge.vercel.app/)
+
+# My process
+
+## Built With
+
+- Semantic HTML5 markup
+- CSS Modules
+- Flexbox
+- grid
+- mobile-first
+- React
+- React-router
+- Contex api
+
+## How it works
+
+**two functions were made to access the Fielo API:**
+
+- Function to get the token:
+
+```javascript
+export const  getFielo = (token, route, setState) => {
+    axios.get((fielo.url + route), {
+        headers: {
+            'x-access-token': token
+        }})
+        .then(response => {
+            setState(response.data)
+        })
+        .catch(error => console.log(error))
+}
+
 ```
+- Get function to capture information:
 
-- **/auth** [POST] - Endpoint responsável pela autorização da aplicação, é necessário adicionar a chave `x-app-id` com  `[APP_ID]`
-- **/users** [GET] - Endpoint responsável por retornar todos os users.
-- **/users/id** [GET] - Endpoint responsável por retornar o perfil do user.
-- **/users/id/activities** [GET] - Endpoint responsável por retornar as atividades do usuário.
-- **/programs/id** [GET]- Endpoint responsável por retornar todos os programs.
-- **/programs/id/levels** [GET]- Endpoint responsável por retornar todos os programs.
-- **/levels/id** [GET]- Endpoint responsável por retornar todos os programs.
-
-## Exemplo da autorização
-```java
-var request = require('request');
-var options = {
-  'method': 'POST',
-  'url': 'https://challenge-fielo.herokuapp.com/auth',
-  'headers': {
-    'x-app-id': 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCh7uxHjWd1CyRgPD4XHcIPKiDb'
-  }
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.body);
-});
- ```
-
-## Resultado da autorização
-
-```java
-{
-    "auth": true,
-    "token": "TOKEN_JWT"
+```javascript
+export const  getFielo = (token, route, setState) => {
+    axios.get((fielo.url + route), {
+        headers: {
+            'x-access-token': token
+        }})
+        .then(response => {
+            setState(response.data)
+        })
+        .catch(error => console.log(error))
 }
 ```
 
-## Exemplo do consumo dos dados
-```java
-var request = require('request');
-var options = {
-  'method': 'GET',
-  'url': 'https://challenge-fielo.herokuapp.com/users',
-  'headers': {
-    'x-access-token': 'TOKEN_JWT'
-  }
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.body);
-});
- ```
+---
+
+All api settings are stored in the `apiConfig.js` file.
+
+`Contex api` was used to concentrate the information obtained from the API in the `UsersContext.js` file.
+
+The entire application is started from the `Home` page where it has the `provider` of the context
+
+The code was divided into components with the idea of being able to reuse the same
+
+In the `assets` folder in `global`, there is a file with the functions used and another with the default colors. 
+
+
+---
+
+## Author
+- Linkdin - [Marco Tullio Franca](https://www.linkedin.com/in/marco-franca/)
+- Frontend Mentor - [@MarcoFranca](https://www.frontendmentor.io/profile/MarcoFranca)
